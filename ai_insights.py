@@ -41,8 +41,8 @@ def build_narrative(f: dict) -> str:
         "## Headline findings",
         "",
         f"- **Post between {hours}** for the highest average engagement. "
-        "These windows line up with lunch breaks and evening scrolling — "
-        "when the audience is actually on their phone.",
+        "These windows line up with evening scrolling — "
+        "when the audience is unwinding and actually on their phone.",
         f"- **{f['best_day']} is the best day to post**; "
         f"{f['worst_day']} performs worst. Weekend attention is less "
         "competitive and people scroll longer.",

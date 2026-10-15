@@ -2,15 +2,15 @@
 
 ## 30-second pitch
 
-"I built a social-media analytics tool on 2,000 synthetic posts. It finds
-the best time, day, and format to post — 7–10 PM, Saturday, Reels — then
+"I built a social-media analytics tool on 1,000 synthetic posts. It finds
+the best time, day, and format to post — 7–9 PM, Saturday, Reels — then
 trains a Random Forest that predicts a post's engagement rate with R² of
-0.70. An insights module auto-writes a plain-English report with five
+0.68. An insights module auto-writes a plain-English report with five
 actionable content tips."
 
 ## Project walkthrough (end-to-end)
 
-1. `generate_data.py` creates 2,000 posts with timestamps, formats, caption
+1. `generate_data.py` creates 1,000 posts with timestamps, formats, caption
    lengths, hashtag counts, follower counts, and likes/comments/shares —
    seeded RNG (`42`) so it's reproducible. Synthetic data was used because
    real account data wasn't available, and it lets the analysis be shared
@@ -40,12 +40,12 @@ hour can look more important partly because of granularity, not just signal.
 **One-hot encoding.** Day of week and format are categorical, so they're
 converted to 0/1 dummy columns — trees can't split on "Reel vs Image" text
 directly. Limitation: this expands 2 columns into 11; with tiny datasets
-that sparsity can hurt, though 2,000 rows is fine.
+that sparsity can hurt, though 1,000 rows is fine.
 
-**R² = 0.70, MAE = 0.011.** R² means the model explains 70% of the variance
-in engagement rate — solid for behavioral data. MAE of 0.011 means
-predictions are off by about 1.1 percentage points on average against a
-4.7% baseline. Limitation: the remaining 30% is unmeasured stuff — topic
+**R² = 0.68, MAE = 0.012.** R² means the model explains 70% of the variance
+in engagement rate — solid for behavioral data. MAE of 0.012 means
+predictions are off by about 1.2 percentage points on average against a
+4.9% baseline. Limitation: the remaining 30% is unmeasured stuff — topic
 quality, trending audio, creator skill — which no feature set here captures.
 
 **Hashtag bucketing.** Raw counts (0–15) were binned into 0–2 / 3–6 / 7–10 /

@@ -45,7 +45,7 @@ def hour_effect(hour: int) -> float:
 
 
 def main() -> None:
-    n_posts = 2000
+    n_posts = 1000
 
     # Post dates spread over Jan-Jun 2026, a few posts per day.
     start = np.datetime64("2026-01-01")
