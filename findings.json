@@ -1,0 +1,57 @@
+{
+  "n_posts": 2000,
+  "overall_avg_engagement_rate": 0.047,
+  "top_3_hours": [
+    19,
+    20,
+    22
+  ],
+  "best_day": "Sat",
+  "worst_day": "Mon",
+  "best_format": "Reel",
+  "worst_format": "Text",
+  "format_avg_rates": {
+    "Reel": 0.0586,
+    "Carousel": 0.0485,
+    "Image": 0.0393,
+    "Text": 0.0269
+  },
+  "best_hashtag_bucket": "3-6",
+  "avg_caption_length": 205,
+  "best_format_day_combo": {
+    "format": "Reel",
+    "day": "Sat"
+  },
+  "model": {
+    "name": "RandomForestRegressor",
+    "n_estimators": 200,
+    "max_depth": 10,
+    "test_mae": 0.0111,
+    "test_r2": 0.696,
+    "features": [
+      "hour",
+      "caption_length",
+      "hashtag_count",
+      "mentions",
+      "followers_at_post",
+      "day_of_week_Fri",
+      "day_of_week_Mon",
+      "day_of_week_Sat",
+      "day_of_week_Sun",
+      "day_of_week_Thu",
+      "day_of_week_Tue",
+      "day_of_week_Wed",
+      "format_Carousel",
+      "format_Image",
+      "format_Reel",
+      "format_Text"
+    ]
+  },
+  "top_features": [
+    "hour",
+    "format_Reel",
+    "followers_at_post",
+    "hashtag_count",
+    "caption_length"
+  ]
+}
